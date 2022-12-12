@@ -1,22 +1,22 @@
 package fr.efrei.factory;
 
-import fr.efrei.domain.Type;
+import fr.efrei.domain.Identity;
 import fr.efrei.util.Helper;
 
 public class IdentityFactory {
-    public static Type creatType(String IdentityName, String IdentityValue){
+    public static Identity creatIdentity(String IdentityName, String IdentityValue){
         String id = Helper.generateId();
 
         if ((Helper.isNullOrEmpty(IdentityName)) || Helper.isNullOrEmpty(IdentityValue)){
             return null;
         }
 
-        Type type = new Type.Builder()
+        Identity Identity = new Identity.Builder()
                 .setId(id)
                 .setIdentityName(IdentityName)
                 .setIdentityValue(IdentityValue)
                 .build();
 
-        return type;
+        return Identity;
     }
 }
